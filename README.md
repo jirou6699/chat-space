@@ -5,7 +5,7 @@
 | name       | string      | null: false, unique: true      |
 | email      | string      | null: false, unique: true      |
 | password   | string      | null: false, unique: true      |
-| group_id   | string      | null: false, foreign_key: true |
+
 
 ### Association
 - has_many :groups through: :groups_users
@@ -17,6 +17,7 @@
 | Column     | Type        |      Options                   |
 |:-----------|------------:|:------------------------------:|
 | text       | text        | null: false,                   |
+| image      | text        | null: false,                   |
 | user_id    | string      | null: false, foreign_key: true |
 | group_id   | string      | null: false, foreign_key: true |
 
@@ -29,7 +30,6 @@
 | Column     | Type        |      Options                   |
 |:-----------|------------:|:------------------------------:|
 | group_name | string      | null: false, unique: true      |
-| user_id    | string      | null: false, foreign_key: true |
 
 ### Association
 - has_many :users through: :groups_users
