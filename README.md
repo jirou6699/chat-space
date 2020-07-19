@@ -16,14 +16,14 @@
 ***
 | Column     | Type        |      Options                   |
 |:-----------|------------:|:------------------------------:|
-| text       | text        | null: false,                   |
-| image      | text        | null: false,                   |
-| user_id    | string      | null: false, foreign_key: true |
-| group_id   | string      | null: false, foreign_key: true |
+| text       | text        |                                |
+| image      | text        |                                |
+| user_id    | integer     | null: false, foreign_key: true |
+| group_id   | integer     | null: false, foreign_key: true |
 
 ### Association
-- belong_to :user
-- belong_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 ***
@@ -40,8 +40,8 @@
 ***
 | Column     | Type        |      Options                   |
 |:-----------|------------:|:------------------------------:|
-| group_id   | string      | null: false, foreign_key: true |
-| user_id    | string      | null: false, foreign_key: true |
+| group_id   | integer      | null: false, foreign_key: true |
+| user_id    | integer      | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
