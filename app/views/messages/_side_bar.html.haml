@@ -1,0 +1,28 @@
+.Side-bar
+  .Side-bar__user-name
+    .TopItems
+      .TopItems__name
+        %p masa
+      .TopItems__icons
+        =link_to "#" do
+          = icon('far', 'edit', class:"TopItems__icons--edit")
+          %span<>
+        =link_to "#" do
+          = icon('fas', 'cog', class:"TopItems__icons--cog")
+  
+  .Side_bar__group-list
+    .SideChat
+      .SideChat__name
+        %p techcamp
+      .SideChat__message
+        %p まだメッセージがありません
+    .SideChat
+      .SideChat__name
+        %p techexpert
+      .SideChat__message
+        %p テストテストテスト（仮）
+    .SideChat
+      .SideChat__name
+        %p techboost
+      .SideChat__message
+        %p テスト2テスト2テスト2（仮）
