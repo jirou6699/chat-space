@@ -1,0 +1,38 @@
+.Chat-main
+  .Chat-main__group-info
+    .HeadingGroup
+      .HeadingGroup__name
+        %p teckcamp
+      %ul.HeadingGroup__memberList 
+        Member :
+        %li.HeadingGroup__memberList--member
+          masa
+    =link_to '#', class:"EditButton" do
+      %P.EditButton--edit Edit
+
+  .Chat-main__message-list
+    .MessageBox
+      .MessageInfo
+        .MessageInfo--name
+          %p masa
+        .MessageInfo--date
+          %p 2020/07/24(Fri)11:26:30
+      .MessageText
+        %p おはよう！
+    .MessageBox
+      .MessageInfo
+        .MessageInfo--name
+          %p sinji
+        .MessageInfo--date
+          %p 2020/07/25(sat)11:26:30
+      .MessageText
+        %p よろしく！
+
+  .Chat-main__message-form
+    %form.Form
+      .FormContents
+        %input.FormContents__text{:type => "text", :placeholder => "type a message"}
+        %label{class: "FormContents__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "FormContents__image--file"}
+      %input.SendButton{:type => "submit", :value => "send"}
