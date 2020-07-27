@@ -2,12 +2,12 @@
   .Side-bar__user-name
     .TopItems
       .TopItems__name
-        %p masa
+        =current_user.name
       .TopItems__icons
         =link_to "#" do
           = icon('far', 'edit', class:"TopItems__icons--edit")
           %span<>
-        =link_to "#" do
+        =link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class:"TopItems__icons--cog")
   
   .Side_bar__group-list
