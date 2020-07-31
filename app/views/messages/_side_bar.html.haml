@@ -4,25 +4,17 @@
       .TopItems__name
         =current_user.name
       .TopItems__icons
-        =link_to "#" do
+        =link_to new_group_path do
           = icon('far', 'edit', class:"TopItems__icons--edit")
           %span<>
         =link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class:"TopItems__icons--cog")
   
   .Side_bar__group-list
+  - current_user.groups.each do |group|
     .SideChat
-      .SideChat__name
-        %p techcamp
-      .SideChat__message
-        %p まだメッセージがありません
-    .SideChat
-      .SideChat__name
-        %p techexpert
-      .SideChat__message
-        %p テストテストテスト（仮）
-    .SideChat
-      .SideChat__name
-        %p techboost
-      .SideChat__message
-        %p テスト2テスト2テスト2（仮）
+      = link_to '#' do
+        .SideChat__name
+          =group.name
+        .SideChat__message
+          メッセージはまだありません
