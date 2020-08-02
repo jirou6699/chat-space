@@ -2,37 +2,23 @@
   .Chat-main__group-info
     .HeadingGroup
       .HeadingGroup__name
-        %p teckcamp
+        =@group.name
       %ul.HeadingGroup__memberList 
         Member :
-        %li.HeadingGroup__memberList--member
-          masa
-    =link_to '#', class:"EditButton" do
+        - @members.each do |member|
+          %li.HeadingGroup__memberList--member 
+            = member.name 
+    =link_to edit_group_path(current_user), class:"EditButton" do
       %P.EditButton--edit Edit
 
   .Chat-main__message-list
-    .MessageBox
-      .MessageInfo
-        .MessageInfo--name
-          %p masa
-        .MessageInfo--date
-          %p 2020/07/24(Fri)11:26:30
-      .MessageText
-        %p おはよう！
-    .MessageBox
-      .MessageInfo
-        .MessageInfo--name
-          %p sinji
-        .MessageInfo--date
-          %p 2020/07/25(sat)11:26:30
-      .MessageText
-        %p よろしく！
+    =render partial: 'message', collection: @messages
 
   .Chat-main__message-form
-    %form.Form
+    =form_with model: [@group, @message], html: {class: "Form"}, local: true do |form|
       .FormContents
-        %input.FormContents__text{:type => "text", :placeholder => "type a message"}
-        %label{class: "FormContents__image"}
+        =form.text_field :text, class: 'FormContents__text', placeholder: 'type a message'
+        =form.label :image, class: "FormContents__image" do
           = icon('fas', 'image')
-          %input{type: "file", class: "FormContents__image--file"}
-      %input.SendButton{:type => "submit", :value => "send"}
+          =form.file_field :image, class: 'FormContents__image--file'
+      =form.submit 'send', class: 'SendButton'
