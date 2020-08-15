@@ -45,6 +45,7 @@ $size_max: 100%;
       height: calc(100vh - 100px - 90px);
       background-color: #fafafa;
       padding: 35px 0 0 40px;
+      overflow: scroll;
     }
     &__message-form{
       height: 90px;
@@ -127,7 +128,7 @@ $size_max: 100%;
 }
 
 .MessageBox{
-  height: 123px;
+  // height: 123px;
   .MessageInfo{
     display: flex;
     &--name{
