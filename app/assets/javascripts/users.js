@@ -57,16 +57,16 @@ $(function(){
     .fail(function() {
       alert("通信エラーです。ユーザーが表示できません。");
     });
-  })
+  });
 
   $("#UserSearchResult").on("click", ".ChatMember__add", function(){
     const userName = $(this).attr("data-user-name");
     const userID = $(this).attr("data-user-id");
     $(this).parent().remove();
     buildHTML(userName, userID);
-  })
+  });
 
   $(".ChatMembers").on("click", ".ChatMember__button", function(){
     $(this).parent().remove();
-  })
+  });
 });
