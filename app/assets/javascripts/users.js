@@ -66,7 +66,7 @@ $(function(){
     buildHTML(userName, userID);
   })
 
-  $(".ChatMember").on("click", ".ChatMember__button", function(){
+  $(".ChatMembers").on("click", ".ChatMember__button", function(){
     $(this).parent().remove();
   })
 });
