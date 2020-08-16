@@ -19,6 +19,7 @@ $size_max: 100%;
   display: flex;
   .Side-bar{
     width: 300px;
+    overflow: scroll;
     background-color: #253141;
     &__user-name{
       height: 100px;
